@@ -38,22 +38,22 @@ public class CommandFactory {
 
         Properties commandProperties = new Properties();
         try {
-            assert commandFileStream != null;
-            commandProperties.load(commandFileStream);
-            commandFileStream.close();
+            assert command_file_stream != null;
+            commandProperties.load(command_file_stream);
+            command_file_stream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         for (String property : commandProperties.stringPropertyNames()) {
-            String[] propertyKey   = property.split("\\.");
-            String   propertyValue = commandProperties.getProperty(property);
+            String[] property_key   = property.split("\\.");
+            String   property_value = commandProperties.getProperty(property);
 
-            if (propertyKey[1].equals("class")) {
-                command_name.put(propertyKey[0], propertyValue);
-                command_inst.put(propertyKey[0], null);
-            } else if (propertyKey[1].equals("argc")) {
-                command_argc.put(propertyKey[0], Integer.parseInt(propertyValue));
+            if (property_key[1].equals("class")) {
+                command_name.put(property_key[0], property_value);
+                command_inst.put(property_key[0], null);
+            } else if (property_key[1].equals("argc")) {
+                command_argc.put(property_key[0], Integer.parseInt(property_value));
             }
         }
     }
