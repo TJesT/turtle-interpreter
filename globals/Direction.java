@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Direction {
 
-    private final Map<String, Coords> directionsMap =
+    private final Map<String, Coords> directions_map =
             new HashMap<String, Coords>() {{
                 put("u", new Coords(0, 1));
                 put("d", new Coords(0, -1));
@@ -14,7 +14,7 @@ public class Direction {
             }};
 
     private boolean isValid(String dir) {
-        return directionsMap.containsKey(dir);
+        return directions_map.containsKey(dir);
     }
     public Coords toCoords(String dir) {
         String dir_lower = dir.toLowerCase();
