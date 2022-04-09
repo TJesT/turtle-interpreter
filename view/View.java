@@ -22,16 +22,16 @@ public class View {
     }
     /** Draw field with Field data & Robot coords */
     public void drawField() {
-        Size     fieldSize          = environment.field.getSize();
-        char[][] fieldData          = environment.field.getData();
-        Coords   turtleCoordsCoords = environment.turtle.getCoords();
+        Size     field_size          = environment.field.getSize();
+        char[][] field_data          = environment.field.getData();
+        Coords   turtle_coords = environment.turtle.getCoords();
 
-        for (int i = 0; i < fieldSize.h; ++i) {
-            for (int j = 0; j < fieldSize.w; ++j) {
-                if (turtleCoordsCoords.x == j && turtleCoordsCoords.y == i) {
+        for (int i = 0; i < field_size.h; ++i) {
+            for (int j = 0; j < field_size.w; ++j) {
+                if (turtle_coords.x == j && turtle_coords.y == i) {
                     System.out.print("\uD83D\uDC22");
                 } else {
-                    System.out.print(fieldData[j][i]);
+                    System.out.print(field_data[j][i]);
                 }
                 System.out.print(" ");
             }
