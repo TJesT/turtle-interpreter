@@ -7,8 +7,8 @@ import turtle.Turtle;
 
 public class Environment {
     private boolean initialized;
-    public Field field;
-    public Turtle turtle;
+    public  Field field;
+    public  Turtle turtle;
 
     public Environment() {
         initialized = false;
